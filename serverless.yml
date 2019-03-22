@@ -1,0 +1,18 @@
+service: takeon-val-comparison
+
+provider:
+  name: aws
+  runtime: java8
+  region: eu-west-2
+  role: arn:aws:iam::FOO:role/lambda_basic_execution # Obscuring ARN, this should be passed
+
+package:
+  artifact: target/val-comparison-1.0-SNAPSHOT.jar
+
+functions:
+  valueComparison:
+    handler: uk.gov.ons.validation.serverless.Handler
+    events:
+      - http:
+          path: val-comparison
+          method: post
