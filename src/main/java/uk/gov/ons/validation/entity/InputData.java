@@ -14,4 +14,12 @@ public class InputData {
         this.comparisonValue = comparisonValue;
     }
 
+    @Override
+    public String toString() {
+        return "InputData{" +
+                "primaryValue='" + primaryValue + '\'' +
+                ", comparisonValue='" + comparisonValue + '\'' +
+                ", metaData=" + metaData +
+                '}';
+    }
 }
